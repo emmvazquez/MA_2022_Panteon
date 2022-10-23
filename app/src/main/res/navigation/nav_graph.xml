@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioSesion">
+
+    <fragment
+        android:id="@+id/inicioSesion"
+        android:name="com.example.panteon.InicioSesion"
+        android:label="fragment_inicio_sesion"
+        tools:layout="@layout/fragment_inicio_sesion" >
+        <action
+            android:id="@+id/action_inicioSesion_to_registrarse"
+            app:destination="@id/registrarse" />
+        <action
+            android:id="@+id/action_inicioSesion_to_inicio"
+            app:destination="@id/inicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrarse"
+        android:name="com.example.panteon.Registrarse"
+        android:label="fragment_registrarse"
+        tools:layout="@layout/fragment_registrarse" >
+        <action
+            android:id="@+id/action_registrarse_to_inicioSesion"
+            app:destination="@id/inicioSesion" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDifuntos"
+        android:name="com.example.panteon.AddDifuntos"
+        android:label="fragment_add_difuntos"
+        tools:layout="@layout/fragment_add_difuntos" >
+        <action
+            android:id="@+id/action_addDifuntos_to_inicio2"
+            app:destination="@id/inicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapa"
+        android:name="com.example.panteon.Mapa"
+        android:label="fragment_mapa"
+        tools:layout="@layout/fragment_mapa" >
+        <action
+            android:id="@+id/action_mapa_to_inicio2"
+            app:destination="@id/inicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/graficas"
+        android:name="com.example.panteon.Graficas"
+        android:label="fragment_graficas"
+        tools:layout="@layout/fragment_graficas" >
+        <action
+            android:id="@+id/action_graficas_to_inicio2"
+            app:destination="@id/inicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/datosPagante"
+        android:name="com.example.panteon.DatosPagante"
+        android:label="fragment_datos_pagante"
+        tools:layout="@layout/fragment_datos_pagante" >
+        <action
+            android:id="@+id/action_datosPagante_to_datosPago"
+            app:destination="@id/datosPago" />
+        <action
+            android:id="@+id/action_datosPagante_to_inicio"
+            app:destination="@id/inicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/datosPago"
+        android:name="com.example.panteon.DatosPago"
+        android:label="fragment_datos_pago"
+        tools:layout="@layout/fragment_datos_pago" >
+        <action
+            android:id="@+id/action_datosPago_to_inicio2"
+            app:destination="@id/inicio" />
+        <action
+            android:id="@+id/action_datosPago_to_datosPagante"
+            app:destination="@id/datosPagante" />
+    </fragment>
+    <fragment
+        android:id="@+id/inicio"
+        android:name="com.example.panteon.Inicio"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicio_to_addDifuntos"
+            app:destination="@id/addDifuntos" />
+        <action
+            android:id="@+id/action_inicio_to_mapa"
+            app:destination="@id/mapa" />
+        <action
+            android:id="@+id/action_inicio_to_graficas"
+            app:destination="@id/graficas" />
+        <action
+            android:id="@+id/action_inicio_to_datosPagante"
+            app:destination="@id/datosPagante" />
+    </fragment>
+</navigation>
